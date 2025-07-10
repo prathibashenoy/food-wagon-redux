@@ -3,7 +3,7 @@ import Popularitemlist from './components/Popularitemlist';
 import Topfoodlist from './components/Topfoodlist'
 import Topiconlist from './components/Topiconlist';
 import Restaurantitemlists from './components/Restaurantitemlists';
-import Categorieslist from './components/categorieslist';
+import Categorieslist from './components/Categorieslist';
 function App() {
 
   const topfood = [
