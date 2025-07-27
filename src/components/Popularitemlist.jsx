@@ -1,6 +1,15 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
+import SelectedPopularitem from "../routes/SelectedPopularitem"; // ✅ Correct path based on your folder structure
+
 
 function Popularitemlist(props) {
+   
+     const navigate = useNavigate();
+     const handleOrder = () => {
+        navigate(`/SelectedPopularitem/${props.id}`, { state: props });
+     };
+    
 
     return (
         <article className="container flex-col ">
@@ -16,7 +25,7 @@ function Popularitemlist(props) {
               <div>
                 <p className="font-bold">{props.price}</p>
               </div>
-              <button className="bg-orange-500 px-5 py-2 text-white rounded-md w-40">Order Now</button>
+              <button onClick={handleOrder} className="bg-orange-500 px-5 py-2 text-white rounded-md w-40">Order Now</button>
             </article>
     );
 }

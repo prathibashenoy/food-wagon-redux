@@ -4,6 +4,10 @@ import Topfoodlist from './components/Topfoodlist'
 import Topiconlist from './components/Topiconlist';
 import Restaurantitemlists from './components/Restaurantitemlists';
 import Categorieslist from './components/Categorieslist';
+import Header from './components/Header';
+import Footer from './components/Footer';
+
+
 function App() {
 
   const topfood = [
@@ -67,43 +71,48 @@ function App() {
   const popular = [
     {
       id:1,
-      snap:"./images/cheeseburger.png",
+      snap:"/images/cheeseburger.png",
       dish:"Cheese Burger",
       location:"Burger Arena",
+      description:"A delicious cheese burger with a juicy beef patty, melted cheese, fresh lettuce, tomato, onions, and tangy sauces, all stacked in a soft toasted bun. Perfect for satisfying your cravings!",
       price:"$3.88"
 
     },
     {
       id:2,
-      snap:"./images/toffescake.png",
+      snap:"/images/toffescake.png",
       dish:"Toffe’s Cake",
       location:"Top Sticks",
+      description:"Toffe’s Cake is a rich, moist dessert infused with caramel and toffee flavors. Topped with creamy frosting, it offers a perfect blend of sweetness and softness in every bite.",
       price:"$4.00"
     },
     {
       id:3,
-      snap:"./images/dancake.png",
+      snap:"/images/dancake.png",
       dish:"Dancake",
       location:"Cake World",
+      description:"Dancake is a soft, fluffy cake with rich, buttery flavor, perfect for tea time or dessert. Lightly sweet and moist, it melts in your mouth with every delightful bite.",
       price:"$1.99"
     },
     {
       id:4,
-      snap:"./images/crispysandwich.png",
+      snap:"/images/crispysandwich.png",
       dish:"Crispy Sandwich",
       location:"Fastfood Dine",
+      description:"Crispy Sandwich is a delicious snack with golden, crunchy bread filled with fresh veggies, cheese, and savory sauces. Every bite offers a perfect contrast of crispiness outside and softness inside.",
       price:"$3.00"
     },
     {
       id:5,
-      snap:"./images/thaisoup.png",
+      snap:"/images/thaisoup.png",
       dish:"Thai Soup",
       location:"Foody man",
+      description:"Thai Soup is a flavorful blend of spicy, sour, and savory tastes, made with herbs, lemongrass, vegetables, and tender meat or tofu. It's warming, aromatic, and deeply satisfying with every spoonful.",
       price:"$3.00"
 
     }
   ]
-  const popularitems = popular.map(popular => <Popularitemlist key={popular.id} snap={popular.snap} dish={popular.dish} location={popular.location} price={popular.price}/>)
+  const popularitems = popular.map(popular => <Popularitemlist key={popular.id} snap={popular.snap} dish={popular.dish} location={popular.location} description={popular.description} price={popular.price}/>)
   
   const restaurant = [
     {
@@ -231,26 +240,6 @@ const categoriesitems = categories.map(categories => <Categorieslist key={catego
 
   return (
     <>
-      <header className=" container	flex items-center justify-between mx-auto">
-        <div>
-          <img src="./images/foodwagonLogo.png" alt="" />
-        </div>
-        
-        <div className="flex items-center ">
-          <span className="flex items-center  font-bold">
-            Deliver to:  
-            <img src="./icons/map-marker-alt.png" alt="location" />
-             Current Location Mohammadpur Bus Stand,Dhaka
-             </span>
-        </div>
-        <div className="flex items-center ">
-          <img  className="" src="./icons/Search.png" alt="search icon" />
-          <span>Search Food</span>
-        </div>
-        <div>
-          <button className="px-4 py-1 rounded-lg shadow-md hover:shadow-lg transition-shadow text-orange-500 font-semibold">Login</button>
-        </div>
-      </header> 
       <main>
         <section className="bg-yellow-400">
           <div className="container mx-auto py-5 h-100 gap-y-100">
@@ -431,109 +420,7 @@ const categoriesitems = categories.map(categories => <Categorieslist key={catego
             </div>
           </div>
         </section> 
-        <section className='bg-black'>
-          <div className='container mx-auto pt-9 text-white'>
-            <div>
-              <h2 className='font-bold text-lg'>Our top cities</h2>
-            </div>
-            <div className='grid grid-cols-5 flex justify-evenly pt-5 pb-7 gap-20 border-b-1 border-gray-500 text-gray-400'>
-              <div className='flex flex-col'>
-                <span>San Francisco</span>
-                <span>Miami</span>
-                <span>San Diego</span>
-                <span>East Bay</span>
-                <span>Long Beach</span>
-              </div>
-              <div className='flex flex-col'>
-                <span>Los Angeles</span>
-                <span>Washington DC</span>
-                <span>Seattle</span>
-                <span>Portland</span>
-                <span>Nashville</span>
-              </div>
-              <div className='flex flex-col'>
-                <span>New York City</span>
-                <span>Orange County</span>
-                <span>Atlanta</span>
-                <span>Charlotte</span>
-                <span>Denver</span>
-              </div>
-              <div className='flex flex-col'>
-                <span>Chicago</span>
-                <span>Phoenix</span>
-                <span>Las Vegas</span>
-                <span>Sacramento</span>
-                <span>Oklahoma City</span>
-              </div>
-              <div className='flex flex-col'>
-                <span>Columbus</span>
-                <span>New Mexico</span>
-                <span>Albuquerque</span>
-                <span>Sacramento</span>
-                <span>New Orleans</span>
-              </div>              
-            </div>
-            <div className='flex flex-row gap-30  border-b-1 border-gray-500 pb-10'>
-              <div className='pt-7 flex flex-row gap-15'>
-
-              <div className='flex flex-col'>
-                <h2 className='font-bold text-md'>Company</h2>
-                <div className='flex flex-col pt-7  text-gray-400'>
-                  <span>About us</span>
-                  <span>Team</span>
-                  <span>Careers</span>
-                  <span>Blog</span>        
-                </div>
-              </div>
-
-              <div className='flex flex-col'>
-                <div>
-                <h2 className='font-bold text-md'>Contact</h2>
-                <div className='flex flex-col pt-7  text-gray-400'>
-                  <span>Help & Support</span>
-                  <span>Partner with us </span>
-                  <span>Ride with us</span>                          
-                </div>
-              </div>       
-              </div>
-              
-
-              <div className='flex flex-col'>
-                <h2 className='font-bold text-md'>Legal</h2>
-                 <div className='flex flex-col pt-7  text-gray-400'>
-                  <span>Terms & Conditions</span>
-                  <span>Refund & Cancellation</span>
-                  <span>Privacy Policy</span>
-                  <span>Cookie Policy</span>        
-                 </div>
-              </div>       
-              </div>  
-               <div className='pt-7 flex flex-col text-gray-600'>
-                  <h1 className='font-bold '>FOLLOW US</h1>
-                  <div className='pt-5 flex flex-row gap-5'>
-                    <img src="./icons/insta.png" alt="instagram image" />
-                    <img src="./icons/facebook.png" alt="facebook image" />
-                    <img src="./icons/twitter.png" alt="twitter image" />
-                  </div>
-                  <p className='font-bold pt-5'>Receive exclusive offers in your mailbox</p>
-                  <div className='flex flex-row pt-5'>                        
-                    <input class="placeholder-shown:border-gray-500  bg-gray-200 mt-2 py-2 my-1 pl-2 rounded-lg w-80" placeholder="&#9993;Enter your address" />    
-                    <button className="bg-orange-500 ml-2 text-white rounded-md w-30">Subscribe</button>                      
-
-                  </div>
-              
-                </div>       
-
-            </div>
-            <div className='pt-5 flex justify-between items-center text-sm'>
-              <span>All rights Reserved &#169; My Company, 2025</span>
-              <span>Made with &#129505; by Prathiba</span>
-            </div>
-              
-          </div>
-
-        </section>    
-       
+               
       </main>
     </>
   )
