@@ -23,7 +23,7 @@ function Popularitemlist(props) {
                 <span className="flex flex-row text-orange-400 "><img src="./icons/map-marker-alt.png" alt="Location icon" />{props.location}</span>
               </div>
               <div>
-                <p className="font-bold">{props.price}</p>
+                <p className="font-bold">${props.price}</p>
               </div>
               <button onClick={handleOrder} className="bg-orange-500 px-5 py-2 text-white rounded-md w-40">Order Now</button>
             </article>

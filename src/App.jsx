@@ -75,7 +75,7 @@ function App() {
       dish:"Cheese Burger",
       location:"Burger Arena",
       description:"A delicious cheese burger with a juicy beef patty, melted cheese, fresh lettuce, tomato, onions, and tangy sauces, all stacked in a soft toasted bun. Perfect for satisfying your cravings!",
-      price:"$3.88"
+      price:"3.88"
 
     },
     {
@@ -84,7 +84,7 @@ function App() {
       dish:"Toffe’s Cake",
       location:"Top Sticks",
       description:"Toffe’s Cake is a rich, moist dessert infused with caramel and toffee flavors. Topped with creamy frosting, it offers a perfect blend of sweetness and softness in every bite.",
-      price:"$4.00"
+      price:"4.00"
     },
     {
       id:3,
@@ -92,7 +92,7 @@ function App() {
       dish:"Dancake",
       location:"Cake World",
       description:"Dancake is a soft, fluffy cake with rich, buttery flavor, perfect for tea time or dessert. Lightly sweet and moist, it melts in your mouth with every delightful bite.",
-      price:"$1.99"
+      price:"1.99"
     },
     {
       id:4,
@@ -100,7 +100,7 @@ function App() {
       dish:"Crispy Sandwich",
       location:"Fastfood Dine",
       description:"Crispy Sandwich is a delicious snack with golden, crunchy bread filled with fresh veggies, cheese, and savory sauces. Every bite offers a perfect contrast of crispiness outside and softness inside.",
-      price:"$3.00"
+      price:"3.00"
     },
     {
       id:5,
@@ -108,11 +108,11 @@ function App() {
       dish:"Thai Soup",
       location:"Foody man",
       description:"Thai Soup is a flavorful blend of spicy, sour, and savory tastes, made with herbs, lemongrass, vegetables, and tender meat or tofu. It's warming, aromatic, and deeply satisfying with every spoonful.",
-      price:"$3.00"
+      price:"3.00"
 
     }
   ]
-  const popularitems = popular.map(popular => <Popularitemlist key={popular.id} snap={popular.snap} dish={popular.dish} location={popular.location} description={popular.description} price={popular.price}/>)
+  const popularitems = popular.map(popular => <Popularitemlist key={popular.id} id={popular.id} snap={popular.snap} dish={popular.dish} location={popular.location} description={popular.description} price={popular.price}/>)
   
   const restaurant = [
     {
@@ -241,7 +241,7 @@ const categoriesitems = categories.map(categories => <Categorieslist key={catego
   return (
     <>
       <main>
-        <section className="bg-yellow-400">
+        <section className="bg-yellow-400 relative">
           <div className="container mx-auto py-5 h-100 gap-y-100">
             <div>
               <h1 className="text-white text-5xl font-bold mt-5 pt-5">Are you starving?</h1>
@@ -262,13 +262,13 @@ const categoriesitems = categories.map(categories => <Categorieslist key={catego
                               
                 </div>
                 <div className="border-t border-gray-200 pl-2 ">    
-                  <input class="placeholder-shown:border-gray-500  bg-gray-200 mt-2 py-2 my-1 pl-2 rounded-lg w-80" placeholder="Enter your address" />    
+                  <input className="placeholder-shown:border-gray-500  bg-gray-200 mt-2 py-2 my-1 pl-2 rounded-lg w-80" placeholder="Enter your address" />    
                   <button className="bg-orange-500 ml-5 px-5 py-2 text-white rounded-md w-35">Find Food</button>     
                 </div>
                 
               </div>
               <div>
-                <img className="absolute right-35 bottom-39 w-80 h-70" src="./images/ImageBase.png" alt="pickup icon" />
+                <img className="absolute right-35 bottom-0 w-80 h-70" src="./images/ImageBase.png" alt="pickup icon" />
               </div>           
             </div>   
           </div>      
@@ -365,7 +365,7 @@ const categoriesitems = categories.map(categories => <Categorieslist key={catego
                         <button className="flex items-center gap-2 px-4 py-4 text-white font-semibold bg-orange-500 rounded-lg shadow-md w-80 flex justify-center" >Proceed to order <img src="./icons/righticon.png" alt="" /></button>
                       </div>
                     </div>                    
-                    <div class="col-span-2">
+                    <div className="col-span-2">
                       <img src="./images/Crispy.png" alt="" />
                     </div>                    
                   </article>                  
@@ -374,7 +374,7 @@ const categoriesitems = categories.map(categories => <Categorieslist key={catego
               <div className="container mx-auto flex items-center justify-center pt-7 ">
                 <div className="bg-white mt-9 rounded-2xl shadow-md px-5 py-5  flex items-center justify-center gap-12 inline-block ">
                   <article className="grid grid-cols-3">
-                    <div class="col-span-2">
+                    <div className="col-span-2">
                       <img src="./images/fried.png" alt="" />
                     </div>
                     <div className='grid grid-cols pl-3	'>
@@ -403,7 +403,7 @@ const categoriesitems = categories.map(categories => <Categorieslist key={catego
                         <button className="flex items-center gap-2 px-4 py-4 text-white font-semibold bg-orange-500 rounded-lg shadow-md w-80 flex justify-center" >Proceed to order <img src="./icons/righticon.png" alt="" /></button>
                       </div>
                     </div>                    
-                    <div class="col-span-2">
+                    <div className="col-span-2">
                       <img src="./images/spicypizza.png" alt="" />
                     </div>                    
                   </article>                  

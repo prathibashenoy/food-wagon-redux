@@ -1,9 +1,17 @@
 import React from 'react'
+import { useDispatch } from 'react-redux';
 import { useLocation } from 'react-router-dom';
+import { Navigate } from 'react-router-dom';
+import { addItemToCart } from '../features/cart/cartSlice';
 
 function SelectedPopularitem() {
    const location = useLocation();
   const popularItem = location.state;
+  const dispatch = useDispatch();
+
+   //const navigate = useNavigate();
+
+  
 
   return (
     <>
@@ -21,8 +29,8 @@ function SelectedPopularitem() {
             <h2 className="text-xl font-bold">{popularItem.dish}</h2>
             <p className="text-orange-500">{popularItem.location}</p>
             <p>{popularItem.description}</p>
-            <p className="font-bold text-lg">{popularItem.price}</p>
-            <button className="bg-orange-500 px-5 py-2 text-white font-bold rounded-md w-40">Add To Cart</button>
+            <p className="font-bold text-lg">${popularItem.price}</p>
+            <button onClick={() =>{dispatch(addItemToCart(popularItem))}} className="bg-orange-500 px-5 py-2 text-white font-bold rounded-md w-40">Add To Cart</button>
          </div>
          
       

@@ -88,7 +88,7 @@ function Footer(){
                   </div>
                   <p className='font-bold pt-5'>Receive exclusive offers in your mailbox</p>
                   <div className='flex flex-row pt-5'>                        
-                    <input class="placeholder-shown:border-gray-500  bg-gray-200 mt-2 py-2 my-1 pl-2 rounded-lg w-80" placeholder="&#9993;Enter your address" />    
+                    <input className="placeholder-shown:border-gray-500  bg-gray-200 mt-2 py-2 my-1 pl-2 rounded-lg w-80" placeholder="&#9993;Enter your address" />    
                     <button className="bg-orange-500 ml-2 text-white rounded-md w-30">Subscribe</button>                      
 
                   </div>
